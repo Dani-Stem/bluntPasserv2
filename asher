@@ -1,35 +1,46 @@
 #include <Servo.h>
-
-Servo myservo;  
-
-
-int pos = 50;   
-
-void setup() {
-  myservo.attach(9);  
+Servo servoy;  
+Servo servox;  
+Servo servoa; 
+int posx = 35;   
+int posy = 180;   
+int posa = 50;   
+void setup() { 
+  //x & y
+  servoy.attach(9);  
+  servox.attach(6); 
+  servox.write(posx);
   
-  for (pos = 100; pos <= 125; pos += 3) { 
-    // in steps of 1 degree
-    myservo.write(pos);              
-    delay(8);                       
-  }
-  for (pos = 125; pos >= 100; pos -= 1) { 
-    myservo.write(pos);              
+  for (posy = 180; posy >= 0; posy -= 1) { 
+    servoy.write(posy);              
     delay(10);                       
   }
   
-  for (pos = 100; pos <= 125; pos += 3) { 
-    // in steps of 1 degree
-    myservo.write(pos);              
+  //asher
+  servoa.attach(3);  
+  for (posa = 50; posa <= 80; posa += 3) { 
+    servoa.write(posa);              
     delay(8);                       
   }
-  for (pos = 125; pos >= 100; pos -= 1) { 
-    myservo.write(pos);              
+  for (posa = 90; posa >= 65; posa -= 1) { 
+    servoa.write(posa);              
     delay(10);                       
   }
-  delay(20);
-  delay(20);
+  for (posa = 65; posa <= 90; posa += 3) { 
+    servoa.write(posa);              
+    delay(8);                       
+  }
+  for (posa = 90; posa >= 50; posa -= 1) { 
+    servoa.write(posa);              
+    delay(10);                       
+  }
+  
+  //y
+   for (posy = 0; posy <= 180; posy += 1) { 
+    servoy.write(posy);              
+    delay(5);                       
+  }  
+                                
 }
-
 void loop() {
 }
