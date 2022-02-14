@@ -1,0 +1,40 @@
+#include <Servo.h>
+Servo servol;
+Servo servoy;
+
+int posl = 0;   
+int posy = 100;   
+
+void setup() {
+servol.attach(11);  
+servoy.attach(9);  
+
+  
+  for (posy = 180; posy >= 135; posy -= 1) { 
+    servoy.write(posy);              
+    delay(10);                       
+  }
+
+   for (posl = 0; posl <= 50; posl += 1) { 
+    servol.write(posl);              
+    delay(1);                       
+  }
+  for (posl = 50; posl >= 0; posl -= 1) { 
+    servol.write(posl);              
+    delay(1);                       
+  }
+     delay(3000);  
+   for (posl = 0; posl <= 50; posl += 1) { 
+    servol.write(posl);              
+    delay(1);                       
+  }
+
+   for (posy = 135; posy <= 180; posy += 1) { 
+    servoy.write(posy);              
+    delay(10);                       
+  }  
+}
+
+void loop() {
+
+}
