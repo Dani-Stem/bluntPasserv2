@@ -4,7 +4,7 @@ Servo servox;
 Servo servoa; 
 int posx = 35;   
 int posy = 180;   
-int posa = 50;   
+int posa = 100;   
 void setup() { 
   //x & y
   servoy.attach(9);  
@@ -18,19 +18,19 @@ void setup() {
   
   //asher
   servoa.attach(3);  
-  for (posa = 50; posa <= 80; posa += 3) { 
+  for (posa = 100; posa <= 120; posa += 3) { 
     servoa.write(posa);              
-    delay(8);                       
+    delay(15);                       
   }
-  for (posa = 90; posa >= 65; posa -= 1) { 
+  for (posa = 135; posa >= 90; posa -= 1) { 
     servoa.write(posa);              
-    delay(10);                       
+    delay(5);                       
   }
-  for (posa = 65; posa <= 90; posa += 3) { 
+  for (posa = 90; posa <= 135; posa += 3) { 
     servoa.write(posa);              
-    delay(8);                       
+    delay(5);                       
   }
-  for (posa = 90; posa >= 50; posa -= 1) { 
+  for (posa = 135; posa >= 100; posa -= 1) { 
     servoa.write(posa);              
     delay(10);                       
   }
@@ -38,7 +38,7 @@ void setup() {
   //y
    for (posy = 0; posy <= 180; posy += 1) { 
     servoy.write(posy);              
-    delay(5);                       
+    delay(10);                       
   }  
                                 
 }
